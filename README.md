@@ -60,3 +60,65 @@ sudo apt install python3 python3-venv python3-pip -y
    ```
 
 Buka browser kamu dan akses [http://localhost:5000](http://localhost:5000) buat lihat aplikasinya.
+
+## Menjalankan Flask Otomatis dengan systemd
+
+Supaya aplikasi Flask kamu jalan terus di background dan otomatis start saat instance di-reboot, ikuti langkah ini:
+
+1. Buat file service systemd baru:
+
+```bash
+sudo nano /etc/systemd/system/flask-minimal.service
+```
+
+2. Isi file `flask-minimal.service` dengan konfigurasi berikut (sesuaikan path dan user):
+
+```ini
+[Unit]
+Description=Flask Minimal App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/flask-minimal
+Environment="PATH=/home/ubuntu/flask-minimal/venv/bin"
+ExecStart=/home/ubuntu/flask-minimal/venv/bin/python app.py
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+> **Catatan:**
+>
+> * Ganti `ubuntu` dengan username kamu di instance AWS.
+> * Pastikan path `WorkingDirectory` dan `ExecStart` sesuai lokasi project dan virtual environment kamu.
+
+3. Simpan dan keluar dari editor (`Ctrl+O`, `Enter`, lalu `Ctrl+X` di nano).
+
+4. Reload systemd supaya mengenali service baru:
+
+```bash
+sudo systemctl daemon-reload
+```
+
+5. Aktifkan service supaya jalan otomatis saat boot:
+
+```bash
+sudo systemctl enable flask-minimal.service
+```
+
+6. Jalankan service sekarang juga:
+
+```bash
+sudo systemctl start flask-minimal.service
+```
+
+7. Cek status service untuk memastikan berjalan:
+
+```bash
+sudo systemctl status flask-minimal.service
+```
+
+Jika semua benar, aplikasi Flask kamu sekarang berjalan otomatis di port 5000 dan akan tetap jalan walau kamu logout atau instance reboot.

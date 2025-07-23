@@ -1,63 +1,77 @@
+Oke, saya buat README-nya dengan bahasa yang lebih santai dan gampang dipahami untuk anak SMK jurusan TKJ, ya. Begini versi yang sudah saya sesuaikan:
+
+---
+
 # flask-minimal
 
-A minimal Flask starter project designed to help you quickly set up a clean, simple, and efficient web application. This project is structured to keep things lightweight and focuses on productivity, with all your code contained in a single file (`app.py`), along with basic templates and static assets.
+Project Flask minimalis yang gampang banget dipakai buat bikin aplikasi web simpel dan ringan. Semua kodenya cuma di satu file (`app.py`), plus ada template HTML dan file statis dasar biar gampang dikembangin.
 
+## Fitur
 
-## Features
-- Single-file Flask application (`app.py`) to maximize productivity and simplicity.
-- Basic HTML template structure with minimal styling and JavaScript.
-- Simple and intuitive project setup with no unnecessary complexity.
-- Easily customizable for rapid development of web applications.
+* Aplikasi Flask cuma satu file (`app.py`), jadi gak ribet dan cepet paham.
+* Struktur template HTML sederhana, ada sedikit styling dan JavaScript.
+* Setup gampang tanpa hal-hal yang nggak perlu.
+* Bisa kamu modifikasi dengan cepat buat bikin aplikasi web sendiri.
 
-## Preparation
+## Persiapan
+
+Jalankan perintah ini dulu buat update dan install Python beserta toolsnya:
+
 ```bash
 sudo apt update
 sudo apt install python3 python3-venv python3-pip -y
 ```
 
-## Installation
+## Cara Instalasi
 
-1. Clone the repository:
+1. Clone project ini ke komputer kamu:
+
    ```bash
    git clone https://github.com/yourusername/flask-minimal.git
    cd flask-minimal
    ```
 
-2. Create a virtual environment (recommended):
+2. Buat virtual environment (biar bersih dan rapi):
+
    ```bash
    python3 -m venv venv
    source venv/bin/activate
    ```
 
-3. Install the required dependencies:
+3. Install semua package yang dibutuhkan:
+
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Run the app:
+4. Jalankan aplikasinya:
+
    ```bash
    python app.py
    ```
 
-The Flask app will start, and you can view it by navigating to http://localhost:5000 in your browser.
+Buka browser kamu dan akses [http://localhost:5000](http://localhost:5000) buat lihat aplikasinya.
 
-## Usage
+## Cara Pakai
 
-This starter project is ready to be used as a foundation for building web applications. The app.py file contains all the Flask routes and logic, making it simple to expand and customize. You can add more templates, routes, or static files as needed.
+Project ini siap dipake buat belajar dan bikin aplikasi web sederhana. Semua route dan logika ada di file `app.py`, jadi kamu tinggal tambah atau ubah sesuai kebutuhan.
 
-## Customization
-You can easily modify:
+## Bisa Dimodifikasi di Mana?
 
- - The HTML structure in `templates/index.html`
- - The styling in `static/style.css`
- - The interactivity in `static/script.js`
+* Struktur HTML di `templates/index.html`
+* Styling di `static/style.css`
+* JavaScript di `static/script.js`
 
-Feel free to update the app.py file to add your routes or any additional logic to fit your needs.
+Kalau mau nambah route atau fitur, tinggal edit aja `app.py`-nya.
 
-## License
-This project is licensed under the MIT License.
+## Lisensi
 
-## Contributing
-Feel free to fork this repository and create pull requests if you have improvements or bug fixes. If you have any suggestions, open an issue, and we’ll discuss it!
+Project ini pakai lisensi MIT, jadi bebas kamu pake dan modifikasi asal kasih kredit.
 
-This project is built with simplicity and efficiency in mind, perfect for quickly starting small web apps or prototypes with minimal overhead.
+## Kontribusi
+
+Kalau kamu punya ide atau mau bantu perbaiki, silakan fork dan buat pull request. Bisa juga buka issue kalau ada yang mau ditanyain atau didiskusiin.
+
+---
+
+Gimana, udah enak dibaca dan dimengerti belum? Kalau mau saya bikin dalam bentuk file README.md langsung, tinggal bilang ya!

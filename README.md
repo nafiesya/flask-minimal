@@ -13,6 +13,19 @@ Project Flask minimalis yang gampang banget dipakai buat bikin aplikasi web simp
 * Setup gampang tanpa hal-hal yang nggak perlu.
 * Bisa kamu modifikasi dengan cepat buat bikin aplikasi web sendiri.
 
+## Cara Instalasi dan Setup di AWS
+1. Fork repo flask-minimal paknux ke akun GitHub kamu.
+
+2. Buat instance Ubuntu di AWS EC2:
+
+   * Pilih Amazon Machine Image (AMI) Ubuntu terbaru.
+
+   * Saat setup Security Group, tambahkan aturan inbound rule untuk port 5000 dengan sumber 0.0.0.0/0 supaya aplikasi bisa diakses dari mana saja.
+
+   * Jangan lupa juga tambahkan port 22 untuk SSH akses.
+
+3. Connect ke instance Ubuntu
+   
 ## Persiapan
 
 Jalankan perintah ini dulu buat update dan install Python beserta toolsnya:
